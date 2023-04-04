@@ -12,19 +12,20 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/WagTeixeira/testes-e2e-ebac-shop.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/WagTeixeira/testes-e2e-ebac-shop/issues"
   },
-  "homepage": "",
-  "devDependencies": {
-    "cypress": "^9.7.0"
-  },
+  "homepage": "https://github.com/WagTeixeira/testes-e2e-ebac-shop.git",
   "dependencies": {
-    "faker": "^5.5.3"
+    "-": "^0.0.1",
+    "@faker-js/faker": "^7.6.0",
+    "cypress": "^12.8.1",
+    "D": "^1.0.0"
   }
 }
+
