@@ -4,7 +4,6 @@ import LogoutPage from '../support/page_objects/nome-funcionliada.page';
 
 describe('Testes E2E', () => {
     it('Deve efetuar a compra no final', () => {      
-        var quantidade = 1
 
         let nomeFalso = faker.name.firstName()
         let sobrenomeFalso = faker.name.lastName()
@@ -13,30 +12,9 @@ describe('Testes E2E', () => {
         let senhaFalsa = faker.internet.password()
 
         cy.visit('/produtos/')
-
-        cy.get('[class = "product-block grid"]').eq(0).click()
-        cy.get('.button-variable-item-M').click()
-        cy.get('.button-variable-item-Green').click()
-        cy.get('.input-text').clear().type(quantidade)
-        cy.get('.single_add_to_cart_button').click()
         
-        cy.visit('/produtos/')
-
-        cy.get('[class = "product-block grid"]').first().click()
-        cy.get('.button-variable-item-M').click()
-        cy.get('.button-variable-item-Red').click()
-        cy.get('.input-text').clear().type(quantidade)
-        cy.get('.single_add_to_cart_button').click()
-
-        cy.visit('/produtos/')
-
-        cy.get('[class = "product-block grid"]').contains('Abominable Hoodie').click()
-        cy.get('.button-variable-item-M').click()
-        cy.get('.button-variable-item-Blue').click()
-        cy.get('.input-text').clear().type(quantidade)
-        cy.get('.single_add_to_cart_button').click()
-
-
+        cy.produto('Abominable Hoodie', 1)
+        
         cy.get('.dropdown-toggle > .text-skin > .icon-basket').click()
         cy.get('#cart > .dropdown-menu > .widget_shopping_cart_content > .mini_cart_content > .mini_cart_inner > .mcart-border > .buttons > .checkout').click()
         

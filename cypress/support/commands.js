@@ -31,6 +31,16 @@ Cypress.Commands.add('login', (usuario, senha) => {
     cy.get('.woocommerce-form > .button').click()
 });
 
+Cypress.Commands.add('produto', (produto, quantidade) => {
+        cy.get('[class = "product-block grid"]').contains(produto).click()
+        cy.get('.button-variable-item-M').click()
+        cy.get('.button-variable-item-Green').click()
+        cy.get('.input-text').clear().type(quantidade)
+        cy.get('.single_add_to_cart_button').click()
+});
+
+
+
 Cypress.Commands.add('cadastro', (nome, sobrenome, empresa, pais, endereco, numero, cidade, estado, cep, telefone, email, senha) => {
         cy.get('#billing_first_name').clear().type(nome)
         cy.get('#billing_last_name').clear().type(sobrenome)
